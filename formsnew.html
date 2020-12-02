@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="../New folder/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+    <style>
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            width: 90%;
+            margin: auto;
+			font-size: 13px !important;
+        }
+
+        .flL {
+            float: left
+        }
+
+        .flR {
+            float: right
+        }
+
+        .w100 {
+            width: 100%
+        }
+
+       
+
+        .mainpanel {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: #ebebeb 0px 4px 24px;
+            margin: 20px 0;
+        }
+
+            .mainpanel table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 5px auto
+            }
+
+            .mainpanel td, th {
+                border: 1px solid #e7e7e7;
+                text-align: left;
+                padding: 8px;
+                font-size: 14px;
+                /*color: #000;*/
+                font-weight: 500;
+            }
+
+            .mainpanel th {
+                color: #fff;
+                font-weight: normal !important
+            }
+
+
+            .mainpanel tr:nth-child(1) {
+                background-color: #488f34;
+            }
+
+     
+
+       
+
+        .green {
+            background-color: #0cbe00;
+            width: 10px;
+            height: 10px;
+            padding: 0;
+        }
+
+
+      
+      
+
+       
+        .panel {
+            padding: 0;
+            display: block;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .label {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            color: #394a56;
+        }
+		
+		.insert{background-color: #3e3e3e !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #3a3a3a !important;
+    padding: 6px !important;
+    float: right !important;}
+		
+		.save{background-color: #4CAF50 !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #639d21 !important;
+    padding: 6px !important;
+    float: right !important;
+    margin: 0 10px;}
+		
+		.delete{background-color: #3e3e3e !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #3a3a3a !important;
+    padding: 6px !important;
+    float: right !important;
+		 margin: 0 10px;}
+		
+
+        .label-text {
+            margin-left: 16px;
+        }
+
+        .f12 {
+            font-size: 12px;
+            color: #000
+        }
+
+        .f11 {
+            font-size: 10px;
+            color: #494848;
+            font-weight: 500;
+        }
+
+        .pdR30 {
+            padding-right: 30px;
+        }
+
+        .mrgtb5 {
+            margin: 5px 0
+        }
+
+        .mrgtb10 {
+            margin: 10px 0
+        }
+
+		.mrgR10{margin-right:10px}
+		.go{background-color: #178b20 !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #5d971b !important;
+    padding: 6px !important;
+		float: right !important;}
+		
+		.insert{background-color: #3e3e3e !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #3a3a3a !important;
+    padding: 6px !important;
+    float: right !important;}
+		
+		.save{background-color: #4CAF50 !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #639d21 !important;
+    padding: 6px !important;
+    float: right !important;
+    margin: 0 10px;}
+		
+		.delete{background-color: #3e3e3e !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    border: 1px solid #3a3a3a !important;
+    padding: 6px !important;
+    float: right !important;
+		 margin: 0 10px;}
+		
+		.edit{width: 20px;
+    height: 20px;
+    color: #fff;
+    background-color: #97eb35;
+    border: none;
+    font-size: 15px}
+		
+		.del{width: 20px;
+    height: 20px;
+    color: #fff;
+    background-color: #E91E63;
+    border: none;
+    font-size: 15px}
+      
+
+        .arrow {
+            color: #fff;
+            background-color: #f16e6e;
+            padding: 4px;
+            margin-right: 10px;
+            border-radius: 13px;
+            height: 15px;
+            width: 15px;
+        }
+		/* form */
+		 .form-horizontal {
+            width: 80%;
+            margin: auto;
+        }
+
+            .form-horizontal .radio, .form-horizontal .radio-inline {
+                margin-right: 10px;
+            }
+
+		.form-control{width: 50%;}
+
+		/*  Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    border-radius: 5px;
+    background-image: none;
+	font-family: 'Montserrat', sans-serif;
+}
+		
+		
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 2.25em;
+  line-height: 3;
+  background:#fff;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+    padding: 0 .5em;
+    color: #67c000;
+    cursor: pointer;
+    font-weight: 500;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 0 1em;
+  background: #5b5b5b;
+  cursor: pointer;
+  color: #fff;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 0 1em;
+  background: #5b5b5b;
+  cursor: pointer;
+  color: #fff;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #000;
+}
+		
+		
+		/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto !important; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40% !important; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+		
+		
+    </style>
+
+</head>
+
+
+<body>
+    
+    
+    <div class="flL w100">
+        <div class="flL">
+           
+                <div class="flL pdR30">
+                    <h5 class="mrgtb10 mrgR10 flL">MSO</h5>
+					<div class="select flL">
+  <select name="slct" id="slct">
+    <option selected disabled></option>
+    <option value="1">DIRECT TV</option>
+    <option value="2">DISH</option>
+  </select>
+</div>
+                </div>
+			<div class="flL pdR30">
+                    <h5 class="mrgtb10 mrgR10 flL">WORKFLOW</h5>
+					<div class="select flL">
+  <select name="slct" id="slct">
+    <option selected disabled></option>
+    <option value="1">DIRECT TV</option>
+    <option value="2">DISH</option>
+  </select>
+</div>
+                </div>
+			<div class="flL pdR30">
+                    <h5 class="mrgtb10 mrgR10 flL">MARKET</h5>
+					<div class="select flL">
+  <select name="slct" id="slct">
+    <option selected disabled></option>
+    <option value="1">DIRECT TV</option>
+    <option value="2">DISH</option>
+  </select>
+</div>
+                </div>
+			
+			<button id="" class="go">GO</button>
+                
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="mainpanel flL w100">
+       
+        <div class="panel">
+            <table>
+                <tr>
+                    <th>IsActive</th>
+                    <th>Zone Group</th>
+                    <th>OU</th>
+                    <th>EXclusion</th>
+					<th>Prefix</th>
+                    <th>Suffix</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+					<th>Action</th>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"></label></td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td>Lorem ipsum</td>
+					 <td><button id="" class="edit">+</button>
+					<button id="" class="del">-</button></td>
+                   
+                </tr>
+				
+               
+
+            </table>
+        </div>
+
+    </div>
+	
+	
+<button id="myBtn" class="insert">INSERT</button>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+	  
+	  <form class="form-horizontal" action="">
+
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="email">IsActive</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Zone Group</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">OU</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">EXclusion</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Prefix</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Suffix</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		   <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Source</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+		   <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Destination</label>
+                <div class="col-md-9 col-sm-12">
+                    <input type="" class="form-control" id="" placeholder="" name="">
+                </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <div class="col-sm-6">
+					<button type="submit" class="btn btn-default delete">DELETE</button>
+                    <button type="submit" class="btn btn-default save">SAVE</button>
+					 
+                </div>
+            </div>
+        </form>
+	  
+	  
+	  
+	  
+  </div>
+
+</div>
+	
+	<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+	
+
+</body>
+</html>
